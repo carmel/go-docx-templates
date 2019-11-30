@@ -2,8 +2,9 @@ package docxt
 
 import (
 	"errors"
-	"go-docx-templates/docx"
 	"io"
+
+	"github.com/carmel/go-docx-templates/docx"
 )
 
 // DocxTemplateFile - файл шаблонизатора
