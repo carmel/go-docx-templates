@@ -3,10 +3,11 @@ package docx
 import (
 	//"fmt"
 	"errors"
-	"go-docx-templates/graph"
 	"reflect"
 	"regexp"
 	"strings"
+
+	"github.com/carmel/go-docx-templates/graph"
 
 	"github.com/aymerick/raymond"
 )
