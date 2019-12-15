@@ -18,10 +18,10 @@ var (
     rxBrCellV       = regexp.MustCompile(`\[\s?BR\s?\]`)
 )
 
-// Функционал шаблонизатора
+// 模板功能
 func renderTemplateDocument(document *Document, v interface{}) error {
     if document != nil {
-        // Проходимся по структуре документа
+        // 遍历文档的结构
         for _, item := range document.Body.Items {
             if err := renderDocItem(item, v); err != nil {
                 return err
@@ -45,12 +45,12 @@ func renderTemplateHeader(header *Header, v interface{}) error {
 }
 
 
-// Поиск элементов шаблона и спаивания текстовых элементов
+// 查找模板元素和焊接文本元素
 // Note: This merge text in one tag and leaves styles only from first element
 // Pseudo example: <red>Red<red><blue>Blue</blue> --> <red>RedBlue</red>
 func findTemplatePatternsInParagraph(p *ParagraphItem) {
     if p != nil {
-        // Перебор элементов параграфа и поиск начал {{ и конца }}
+        // 枚举段落元素并搜索{{和结束}}的开头
         var startItem *RecordItem
         for index := 0; index < len(p.Items); index++ {
             i := p.Items[index]
